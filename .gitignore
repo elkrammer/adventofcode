@@ -62,3 +62,5 @@ MANIFEST
 
 # pytype static type analyzer
 .pytype/
+
+.vim
