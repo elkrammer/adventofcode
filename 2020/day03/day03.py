@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-import functools
-import operator
 
 with open("input.txt") as raw_data:
     data = raw_data.read()
@@ -25,13 +23,13 @@ def p1():
 
 def p2():
     slopes = [[1,1], [1,3], [1,5], [1,7], [2,1]]
-    results = []
+    results = 1
 
     for slope in slopes:
-        trees = 0
+        trees = int()
         trees += findTreesInSlope(slope)
-        results.append(trees)
-    return functools.reduce(operator.mul, results)
+        results *= trees
+    return results
 
 print(f"p1: {p1()}")
 print(f"p2: {p2()}")
