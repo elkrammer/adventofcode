@@ -31,11 +31,24 @@ pub fn part1() -> i32 {
 pub fn part2() -> i32 {
     let f = File::open("input/day1.txt").expect("Unable to open file");
     let f = BufReader::new(f);
-
     let depths: Vec<i32> = f
         .lines()
-        .map(|depth| depth.unwrap().parse::<i32>().unwrap())
+        .filter(|depth| depth.is_ok())
+        .map(|depth| depth.unwrap())
+        .map(|depth| depth.parse::<i32>())
+        .filter(|depth| depth.is_ok())
+        .map(|depth| depth.unwrap())
         .collect();
 
-    3
+    let mut increases = 0;
+    let mut prev = i32::MAX;
+
+    for depth in depths.windows(3) {
+        let curr: i32 = depth.iter().sum();
+        if curr > prev {
+            increases += 1
+        }
+        prev = curr;
+    }
+    increases
 }
