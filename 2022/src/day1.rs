@@ -1,5 +1,4 @@
 use std::fs;
-// use std::io::{BufRead, BufReader};
 
 pub fn day1() -> String {
     let input = fs::read_to_string("input/day1.txt").unwrap();

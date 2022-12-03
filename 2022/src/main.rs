@@ -1,4 +1,5 @@
 use aoc2022::day1::day1;
+use aoc2022::day2::day2;
 
 fn main() {
     let args = std::env::args().collect::<Vec<String>>();
@@ -6,6 +7,7 @@ fn main() {
 
     let result: String = match problem {
         "day1" => day1(),
+        "day2" => day2(),
         _ => "Not solved yet".to_string(),
     };
 
