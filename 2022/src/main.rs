@@ -1,6 +1,7 @@
 use aoc2022::day1::day1;
 use aoc2022::day2::day2;
 use aoc2022::day3::day3;
+use aoc2022::day4::day4;
 
 fn main() {
     let args = std::env::args().collect::<Vec<String>>();
@@ -10,6 +11,7 @@ fn main() {
         "day1" => day1(),
         "day2" => day2(),
         "day3" => day3(),
+        "day4" => day4(),
         _ => "Not solved yet".to_string(),
     };
 
