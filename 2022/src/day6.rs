@@ -11,7 +11,7 @@ pub fn day6() -> String {
 pub fn part1(input: &str) -> usize {
     let mut result: usize = 4;
     let signal: Vec<_> = input.chars().collect();
-    for (idx, char) in signal.windows(4).enumerate() {
+    for (_, char) in signal.windows(4).enumerate() {
         let unique: HashSet<_> = char.iter().collect();
         if unique.len() == 4 {
             break;
@@ -24,7 +24,7 @@ pub fn part1(input: &str) -> usize {
 pub fn part2(input: &str) -> usize {
     let mut result: usize = 14;
     let signal: Vec<_> = input.chars().collect();
-    for (idx, char) in signal.windows(14).enumerate() {
+    for (_, char) in signal.windows(14).enumerate() {
         let unique: HashSet<_> = char.iter().collect();
         if unique.len() == 14 {
             break;
